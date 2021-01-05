@@ -1,7 +1,7 @@
 @import "common/foundation/variables";
 @import "common/foundation/colors";
 @import "common/foundation/mixins";
-@import "./color_definitions";
+@import "library/colors";
 //
 //@mixin transition($time){
 //  transition: all #{$time}s ease-in-out;
@@ -39,7 +39,7 @@
     margin-bottom: 0;
     transition: top .5s ease-out;
     //background: $secondary;
-    background: $dark-derivative-white;
+    background: $derivative-dark-white;
     -webkit-font-smoothing: subpixel-antialiased;
   }
 }
