@@ -1,7 +1,7 @@
 @import "common/foundation/variables";
 @import "common/foundation/colors";
 @import "common/foundation/mixins";
-@import "color_definitions";
+@import "./color_definitions";
 //
 //@mixin transition($time){
 //  transition: all #{$time}s ease-in-out;
