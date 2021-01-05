@@ -1,8 +1,15 @@
+@import "breakpoints";
+
+$container-padding-desktop: 50px;
+$container-padding-mobile: 20px;
+$padding: 20px;
+
 @font-face {
   font-family: 't-star_probold';
   font-weight: normal;
   font-style: normal;
-  src: url(https://s3.us-east-2.amazonaws.com/derivative/T-Star-TW-bold-webfont.woff) format('woff2');
+  //src: url(https://s3.us-east-2.amazonaws.com/derivative/T-Star-TW-bold-webfont.woff) format('woff2');
+  src: url($t-star_probold) format('woff2');
 }
 
 @font-face {
@@ -12,9 +19,121 @@
   src: url($derivative-font) format('woff2');
 }
 
-.d-header {
-  background-color: #222;
+@mixin media($breakpoint) {
+  @media screen and (min-width: #{$breakpoint}) {
+    @content;
+  }
 }
+
+#main {
+  #main-outlet {
+    padding-top: 175px;
+  }
+
+  .d-header {
+    padding-top: 0;
+    min-height: 90px;
+    margin-bottom: 0;
+    transition: top .5s ease-out;
+    background: var(--secondary);
+    -webkit-font-smoothing: subpixel-antialiased;
+    &.show-header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.hide-header {
+      position: fixed;
+      top: -90px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    & * {
+      box-sizing: border-box;
+    }
+    .wrap {
+      position: relative;
+      width: 100%;
+      max-width: 1630px;
+      height: 90px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: $container-padding-mobile;
+      padding-right: $container-padding-mobile;
+      @include media($screen-md){
+        padding-left: $container-padding-desktop;
+        padding-right: $container-padding-desktop;
+      }
+      .nav-wrapper {
+        position: absolute;
+        top: 0;
+        left: $container-padding-mobile;
+        width: calc(100% - #{$container-padding-mobile * 2});
+        height: 100%;
+        @include media($screen-md){
+          left: $container-padding-desktop;
+          width: calc(100% - #{$container-padding-desktop * 2});
+        }
+      }
+    }
+    .d-header-icons .active .icon {
+      background-color: transparent !important;
+    }
+    .contents {
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: - $padding;
+      margin-right: - $padding;
+      height: 100%;
+      @include media($screen-sm){
+        height: 80px;
+      }
+      > .title {
+        display: none;
+      }
+    }
+  }
+  .contents {
+    .extra-info-wrapper {
+      display: none !important;
+    }
+  }
+
+  .logo {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    min-width: 65px;
+    @include transition(.1);
+    height: 100%;
+    width: 100%;
+    max-width: 145px;
+    margin-left: 0;
+    margin-top: 0;
+    @include media ($screen-sm) {
+      margin-right: 34px;
+    }
+    @include media ($screen-md) {
+      max-width: 200px;
+      min-width: 160px;
+      width: 16.66667%;
+    }
+    .svg-img {
+      width: 100%;
+      path {
+        //fill: #fff !important;
+        fill: var(--primary) !important;
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+
 
 .get-it-btn span {
     text-transform: uppercase;
