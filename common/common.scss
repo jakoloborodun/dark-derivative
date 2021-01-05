@@ -10,24 +10,6 @@
   -o-transition: all #{$time}s ease-in-out;
 }
 
-#main {
-  #main-outlet {
-    padding-top: 175px;
-  }
-
-  .d-header {
-    padding-top: 0;
-    min-height: 90px;
-    margin-bottom: 0;
-    transition: top .5s ease-out;
-    background: $secondary;
-    -webkit-font-smoothing: subpixel-antialiased;
-    @include breakpoint(tablet, min-width) {
-      background: $derivative-dark-white;
-    }
-  }
-}
-
 $container-padding-desktop: 50px;
 $container-padding-mobile: 20px;
 $padding: 20px;
@@ -47,6 +29,39 @@ $padding: 20px;
   src: url($derivative-font) format('woff2');
 }
 
+#main {
+  #main-outlet {
+    padding-top: 175px;
+  }
+
+  .d-header {
+    padding-top: 0;
+    min-height: 90px;
+    margin-bottom: 0;
+    transition: top .5s ease-out;
+    background: $secondary;
+    -webkit-font-smoothing: subpixel-antialiased;
+    @include breakpoint(tablet, min-width) {
+      background: $derivative-dark-white;
+    }
+  }
+
+  ul#superfish-2 {
+    display: none;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    font-family: 't-star_probold';
+    height: 90px;
+    -webkit-font-smoothing: subpixel-antialiased;
+    @include breakpoint(tablet, min-width) {
+      display: block;
+    }
+  }
+}
 
 //#main {
 //  #main-outlet {
