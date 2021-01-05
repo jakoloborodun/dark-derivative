@@ -2,31 +2,13 @@
 @import "common/foundation/colors";
 @import "common/foundation/mixins";
 @import "library/colors";
-//
-//@mixin transition($time){
-//  transition: all #{$time}s ease-in-out;
-//  -webkit-transition: all #{$time}s ease-in-out;
-//  -moz-transition: all #{$time}s ease-in-out;
-//  -o-transition: all #{$time}s ease-in-out;
-//}
-//
-//#main {
-//  #main-outlet {
-//    padding-top: 175px;
-//  }
-//
-//  .d-header {
-//    padding-top: 0;
-//    min-height: 90px;
-//    margin-bottom: 0;
-//    transition: top .5s ease-out;
-//    background: $secondary;
-//    -webkit-font-smoothing: subpixel-antialiased;
-//    @include breakpoint(tablet, min-width) {
-//      background: $dark-derivative-white;
-//    }
-//  }
-//}
+
+@mixin transition($time){
+  transition: all #{$time}s ease-in-out;
+  -webkit-transition: all #{$time}s ease-in-out;
+  -moz-transition: all #{$time}s ease-in-out;
+  -o-transition: all #{$time}s ease-in-out;
+}
 
 #main {
   #main-outlet {
@@ -38,9 +20,11 @@
     min-height: 90px;
     margin-bottom: 0;
     transition: top .5s ease-out;
-    //background: $secondary;
-    background: $derivative-dark-white;
+    background: $secondary;
     -webkit-font-smoothing: subpixel-antialiased;
+    @include breakpoint(tablet, min-width) {
+      background: $derivative-dark-white;
+    }
   }
 }
 
