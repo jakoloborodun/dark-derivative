@@ -1,6 +1,7 @@
 @import "common/foundation/variables";
 @import "common/foundation/colors";
 @import "common/foundation/mixins";
+@import "color_definitions";
 //
 //@mixin transition($time){
 //  transition: all #{$time}s ease-in-out;
@@ -37,7 +38,8 @@
     min-height: 90px;
     margin-bottom: 0;
     transition: top .5s ease-out;
-    background: $secondary;
+    //background: $secondary;
+    background: $dark-derivative-white;
     -webkit-font-smoothing: subpixel-antialiased;
   }
 }
