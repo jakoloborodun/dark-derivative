@@ -183,7 +183,8 @@ $padding: 20px;
       }
 
       &.sfHover {
-        img, a {
+        img,
+        > a {
           opacity: 0.5;
         }
       }
