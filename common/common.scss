@@ -135,7 +135,6 @@ $padding: 20px;
     .svg-img {
       width: 100%;
       path {
-        //fill: #fff !important;
         fill: $primary !important;
       }
       &:hover {
@@ -179,13 +178,6 @@ $padding: 20px;
           & > a {
             padding-left: 0;
           }
-        }
-      }
-
-      &.sfHover {
-        img,
-        > a {
-          opacity: 0.5;
         }
       }
 
