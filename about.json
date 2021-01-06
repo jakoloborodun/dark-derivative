@@ -4,7 +4,7 @@
   "about_url": "https://github.com/jakoloborodun/dark-derivative",
   "license_url": "https://github.com/jakoloborodun/dark-derivative/blob/master/LICENSE",
   "authors": "Johann Janzen",
-  "theme_version": "0.0.1",
+  "theme_version": "1.0.1",
   "assets": {
     "derivative-font": "assets/derivative-font.woff",
     "DerivativeIcon": "assets/DerivativeIcon.png",
