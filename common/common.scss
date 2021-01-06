@@ -730,7 +730,27 @@ $padding: 20px;
   }
 }
 
-/////// TEST ///////
+// Forum home button
+li[title="Navigate to the home page"] {
+  display: inline-block;
+  float: left;
+  margin: 0 10px 0 0;
+  padding: 0;
+  a[href="/"] {
+    padding: 6px 12px;
+    color: $secondary;
+    background: $primary;
+    font-size: $font-up-1;
+    line-height: $line-height-small;
+    box-sizing: border-box;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    transition: background 0.15s;
+  }
+}
+
+/////// I have no idea do we really need the rows below. Just transfer from the old theme. ///////
 /* Magic Line */
 #block-superfish-2 {
   position: relative;
@@ -748,28 +768,8 @@ $padding: 20px;
   color: white;
 }
 
-
-li[title="Navigate to the home page"] {
-  display: inline-block;
-  float: left;
-  margin: 0 10px 0 0;
-  padding: 0;
-  a[href="/"] {
-    display: inline-block;
-    padding: 5px 8px;
-    line-height: 20px;
-    background: #e9e9e9;
-    color: #222;
-  }
-}
-
 .js--hide {
   visibility: hidden !important;
-}
-
-
-.get-it-btn span {
-    text-transform: uppercase;
 }
 
 .category-heading, .category-navigation {
