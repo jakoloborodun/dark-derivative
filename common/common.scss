@@ -29,10 +29,14 @@ $padding: 20px;
   src: url($derivative-font) format('woff2');
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #main {
   #main-outlet {
     padding-top: 35px;
-    @include breakpoint(large, min-width) {
+    @include breakpoint(tablet, min-width) {
       padding-top: 135px;
     }
   }
