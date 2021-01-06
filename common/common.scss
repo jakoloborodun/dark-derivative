@@ -158,6 +158,9 @@ $padding: 20px;
     @include breakpoint(tablet, min-width) {
       display: block;
     }
+    .sf-sub-indicator {
+      display: none;
+    }
 
     > li {
       display: inline-block;
@@ -180,7 +183,7 @@ $padding: 20px;
       }
 
       &.sfHover {
-        img {
+        img, a {
           opacity: 0.5;
         }
       }
@@ -393,7 +396,7 @@ $padding: 20px;
               z-index:500;
             }
             a.active {
-              color: #7f7f7f;
+              color: $secondary-high;
               &:after {
                 opacity: 1;
               }
