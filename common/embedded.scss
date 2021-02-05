@@ -2,20 +2,6 @@ html {
     background: none;
 }
 
-@font-face {
-  font-family: 't-star_probold';
-  font-weight: normal;
-  font-style: normal;
-  src: url(https://s3.us-east-2.amazonaws.com/derivative/T-Star-TW-bold-webfont.woff) format('woff2');
-}
-
-@font-face {
-  font-family: 'derivative-font';
-  font-weight: normal;
-  font-style: normal;
-  src: url($derivative-font) format('woff2');
-}
-
 .in-reply-to {
     color: #000;
 }
