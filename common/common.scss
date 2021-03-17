@@ -13,6 +13,7 @@
 $container-padding-desktop: 50px;
 $container-padding-mobile: 20px;
 $padding: 20px;
+$scroll-bar: 15px;
 
 @font-face {
   font-family: 't-star_probold';
@@ -26,10 +27,6 @@ $padding: 20px;
   font-weight: normal;
   font-style: normal;
   src: url($derivative-font) format('woff2');
-}
-
-body {
-  overflow-x: hidden;
 }
 
 #main {
@@ -266,11 +263,11 @@ body {
         &::before {
           content: '';
           z-index:0;
-          width: 200vw;
+          width: calc(100vw - #{$scroll-bar});
           height: 100%;
           position: absolute;
           top: 0;
-          left:-50vw;
+          left: calc((100vw - #{$scroll-bar} - 100%) / -2);
           background-color: $primary;
         }
 
@@ -440,9 +437,12 @@ body {
         position: absolute;
         top: 0;
         left: 100%;
-        width: 100vw;
+        width: calc((100vw - #{$scroll-bar} - 100% * 4) / 2);
         height: 100%;
         background: $derivative-dark-grey;
+      }
+      @include breakpoint(large, min-width) {
+        width: calc((100vw - #{$scroll-bar} - 100% * 3) / 2);
       }
     }
 
