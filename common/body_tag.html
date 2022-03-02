@@ -73,3 +73,278 @@
     </div>
   </div>
 </li>
+
+<script>
+  jQuery(document).ready(function() {
+    jQuery('.d-header .contents > .title').hide();
+
+    jQuery('.d-header .wrap').append('<div class="nav-wrapper"></div>');
+    jQuery('.navbar-header .logo').appendTo($('.d-header .wrap .nav-wrapper'));
+    jQuery('.button-get-now').appendTo($('.d-header .wrap .contents .panel .icons'));
+    jQuery('#superfish-2').appendTo($('.d-header .wrap .nav-wrapper'));
+
+    var parent = '.navigation-container.ember-view';
+    window.onload = function () {
+      var watchIntForum = setInterval(function () {
+        if (jQuery('.navigation-container > li.home-link').length > 0) {
+          if (!jQuery('li.home-link').hasClass('once')) {
+            jQuery('li.home-link').addClass('once');
+          }
+        } else {
+          jQuery(parent).prepend('<li title="Navigate to the home page" class="home-link ember-view"><a href="/">Forum Home</a></li>');
+        }
+      }, 500);
+    };
+
+    jQuery('.js--hide').removeClass('js--hide');
+
+    jQuery('#superfish-2').superfish({
+    });
+
+    jQuery('.button-get-now').on('click', function() {
+      window.location.href = 'https://www.derivative.ca/download';
+    });
+
+    jQuery('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
+
+
+    //Animate pill button, icon and etc.
+    var timeoutbutton;
+    var $buttonsElems = jQuery(
+        ' .btn,' +
+        ' .black-button, .black-button-white,' +
+        ' .return-btn,' +
+        ' .get-it-btn,' +
+        ' .button');
+
+    jQuery($buttonsElems).on('click',function(){
+      jQuery(this).find('a')[0].click();
+    });
+
+    jQuery($buttonsElems).append('<div class="btn-background"></div>');
+
+    jQuery($buttonsElems).hover(
+        function() {
+          clearTimeout(timeoutbutton);
+          var buttonWidth = jQuery(this).innerWidth();
+          $buttonsElems.stop(true,true).removeAttr('style');
+          $buttonsElems.find('.btn-background').stop(true,true).removeAttr('style');
+          jQuery(this).innerWidth(buttonWidth).find('.btn-background').innerWidth(buttonWidth);
+          jQuery(this).stop().animate({
+            'background-position-x':'50%'
+          },300,'linear');
+          jQuery(this).find('.btn-background').stop().animate({
+            'background-position-x':'50%'
+          },300,'linear');
+        },
+        function() {
+          var $butt = jQuery(this);
+          jQuery(this).stop().animate({
+            'background-position-x':'0%'
+          },300,'linear',function(){
+            jQuery(this).css({
+              'background-position-x':'100%'
+            });
+          });
+          jQuery(this).find('.btn-background').stop().animate({
+            'background-position-x':'0%'
+          },300,'linear',function(){
+            jQuery(this).find('.btn-background').css({
+              'background-position-x':'100%'
+            });
+          });
+          timeoutbutton = setTimeout(function(){
+            jQuery($butt).removeAttr('style');
+            jQuery($butt).find('.btn-background').removeAttr('style');
+          }, 300);
+        }
+    );
+
+    jQuery("body").on({
+      mouseenter: function () {
+        var buttonWidth = jQuery(this).innerWidth();
+        jQuery(this).removeAttr('style');
+        jQuery(this).find('.btn-background').removeAttr('style');
+        jQuery(this).innerWidth(buttonWidth).find('.btn-background').innerWidth(buttonWidth);
+        jQuery(this).stop().animate({
+          'background-position-x':'50%'
+        },300,'linear');
+        jQuery(this).find('.btn-background').stop().animate({
+          'background-position-x':'50%'
+        },300,'linear');
+        jQuery(this).innerWidth(buttonWidth);
+      },
+      mouseleave: function () {
+        var $butt = jQuery(this);
+        jQuery(this).find('.btn-background').stop().animate({
+          'background-position-x':'0%'
+        },300,'linear',function(){
+          jQuery(this).find('.btn-background').delay(300).css({
+            'background-position-x':'100%'
+          });
+        });
+        jQuery(this).stop().animate({
+          'background-position-x':'0%'
+        },300,'linear',function(){
+          jQuery(this).delay(300).css({
+            'background-position-x':'100%'
+          });
+        });
+        setTimeout(function(){
+          jQuery($butt).removeAttr('style');
+          jQuery($butt).find('.btn-background').removeAttr('style');
+        }, 300);
+      }
+    },'.return-btn, .media-insert');
+
+
+    //Sticky nav
+    var $nav = $('#superfish-2'),
+        $activeLink = $nav.find('li > a.active'),
+        $subnav = $activeLink.closest('ul'),
+        $header = $('header.d-header'),
+        scroll_direction,
+        scrollTimeInterval,
+        scroll_pos;
+
+    $(window).on('scroll load resize',function() {
+      if (window.innerWidth > 767) {
+        $subnav.addClass('sticky');
+      } else {
+        $subnav.removeClass('sticky');
+      }
+      if (window.innerWidth > 767) {
+        if ($(window).scrollTop() > 90) {
+
+          $subnav.addClass('top-sticky');
+          scroll_direction = (scroll_pos <= $(window).scrollTop()) ? true : false;
+
+          if (scroll_direction) {
+            $header.addClass('hide-header').removeClass('show-header');
+          } else {
+            $header.addClass('show-header').removeClass('hide-header');
+          }
+          window.clearInterval(scrollTimeInterval);
+        } else {
+          $subnav.removeClass('top-sticky');
+          $header.removeClass('show-header hide-header');
+        }
+      }
+      scroll_pos = $(window).scrollTop();
+    })
+
+  });
+
+</script>
+
+<script>
+
+  (function ($) {
+
+    $(window).on('load', function () {
+      var $el, leftPos, newWidth,
+          $mainNav = $("#superfish-2");
+
+      if ($("#magic-line").length < 1) {
+        $mainNav.append("<li id='magic-line'></li>");
+        $("#magic-line").append("<div class='arrow'></div>");
+      }
+      var $magicLine = $("#magic-line");
+
+      if ($('#superfish-2 li ul.sticky').length) {
+        var $elem = $('#superfish-2 li ul.sticky').closest('li.menuparent');
+        $elem.addClass('active-li');
+        $magicLine
+            .addClass('active')
+            .width($elem.find('>a').width())
+            .css("left", $elem.find('> a').position().left)
+            .show()
+            .data("origLeft", $magicLine.position().left);
+      } else {
+        $magicLine
+            .width($('#superfish-2 > .sf-item-1 > a').width())
+            .css("left", $("#superfish-2 > .sf-item-1 > a").position().left)
+            .data("origLeft", $("#superfish-2 > .sf-item-1 > a").position().left)
+            .data("origWidth", $('#superfish-2 > .sf-item-1 > a').width());
+      }
+
+      $("#superfish-2 > li").hover(function () {
+        if ($(this).find('> a').length) {
+          $el = $(this).find('> a');
+          leftPos = $el.position().left;
+          newWidth = $el.width();
+        }
+
+        if (!$('#superfish-2 li ul.sticky').length) {
+          $magicLine.data("origLeft", leftPos)
+              .data("origWidth", newWidth);
+        }
+        $magicLine.clearQueue().stop();
+        $magicLine.animate({
+          left: leftPos,
+          width: newWidth
+        });
+        $('#magic-line').fadeIn(1);
+      }, function () {
+        $magicLine.clearQueue().stop();
+        $magicLine.animate({
+          left: $magicLine.data("origLeft"),
+          width: $magicLine.data("origWidth")
+        });
+
+        var removeMagicLine = setInterval(function () {
+          if (!$('#superfish-2 .sfHover').length) {
+            $("#magic-line").fadeOut(1);
+            window.clearInterval(removeMagicLine);
+          }
+        }, 10);
+
+      });
+
+      initState();
+
+      $(window).on('resize', function () {
+        initState();
+      });
+
+      // Init State on change parent element (DOM)
+      var mutationObserver = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          initState()
+        });
+      });
+
+      mutationObserver.observe(document.querySelector('#superfish-2'), {
+        childList: true,
+        subtree: true,
+      });
+    });
+
+    function initState() {
+      var $elem = $('#superfish-2 li ul.sticky').closest('li.menuparent');
+      var $magicLine = $("#magic-line");
+      var $firstLink = $("#superfish-2 > .sf-item-1 > a");
+
+      if ($('#superfish-2 li ul.sticky').length) {
+        if ($magicLine.length > 0) {
+          $magicLine
+              .width($elem.find('>a').width())
+              .css("left", $elem.find('> a').position().left)
+              .show()
+              .data("origWidth", $magicLine.width())
+              .data("origLeft", $magicLine.position().left);
+        }
+      } else {
+        if ($firstLink.length > 0) {
+          $magicLine
+              .width($firstLink.width())
+              .css("left", $firstLink.position().left)
+              .data("origLeft", $firstLink.position().left)
+              .data("origWidth", $firstLink.width());
+        }
+      }
+    }
+
+  })(jQuery);
+
+</script>
