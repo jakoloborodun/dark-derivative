@@ -197,56 +197,21 @@
       }
     },'.return-btn, .media-insert');
 
-    jQuery(window).scroll(function() {
+    $(window).scroll(function() {
       setTimeout(
           function() {
             if ($('.extra-info-wrapper').length
                 && !($('.d-header .wrap .contents .panel .icons').hasClass('js--scrollEnabled'))
-                && jQuery(this).scrollTop() >= 85) {
-              jQuery('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
-
-              let singleStr = '<li class="button-get-now js--hide"><div class="get-now pull-right hidden-xs hidden-sm"><div class="get-it-btn"><a href="https://dev.derivative.ca/download"><span>Get it now</span></a></div></div></li>';
-
-              singleStr.appendTo($('.d-header .wrap .contents .panel .icons'));
+                && $(this).scrollTop() >= 90) {
+              $('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
               $('.d-header .wrap .contents .panel .icons').addClass('js--scrollEnabled');
+            }
+            else if ($('.d-header .wrap .contents .panel .icons').hasClass('js--scrollEnabled') && jQuery(this).scrollTop() < 50) {
+              $('.d-header .wrap .contents .panel .icons').removeClass('js--scrollEnabled');
+              $('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
             }
           }, 500);
     });
-
-    // //Sticky nav
-    // var $nav = $('#superfish-2'),
-    //     $activeLink = $nav.find('li > a.active'),
-    //     $subnav = $activeLink.closest('ul'),
-    //     $header = $('header.d-header'),
-    //     scroll_direction,
-    //     scrollTimeInterval,
-    //     scroll_pos;
-    //
-    // $(window).on('scroll load resize',function() {
-    //   if (window.innerWidth > 767) {
-    //     $subnav.addClass('sticky');
-    //   } else {
-    //     $subnav.removeClass('sticky');
-    //   }
-    //   if (window.innerWidth > 767) {
-    //     if ($(window).scrollTop() > 90) {
-    //
-    //       $subnav.addClass('top-sticky');
-    //       scroll_direction = (scroll_pos <= $(window).scrollTop()) ? true : false;
-    //
-    //       if (scroll_direction) {
-    //         $header.addClass('hide-header').removeClass('show-header');
-    //       } else {
-    //         $header.addClass('show-header').removeClass('hide-header');
-    //       }
-    //       window.clearInterval(scrollTimeInterval);
-    //     } else {
-    //       $subnav.removeClass('top-sticky');
-    //       $header.removeClass('show-header hide-header');
-    //     }
-    //   }
-    //   scroll_pos = $(window).scrollTop();
-    // })
 
   });
 
