@@ -202,7 +202,7 @@
     jQuery(window).scroll(function () {
       setTimeout(
           function() {
-            if ($('.extra-info-wrapper').length && $icons.hasClass('js--scrollEnabled') && jQuery(this).scrollTop() >= 85) {
+            if ($('.extra-info-wrapper').length && !($icons.hasClass('js--scrollEnabled')) && jQuery(this).scrollTop() >= 85) {
               jQuery('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
               $('<li class="button-get-now js--hide">\n' +
                   '  <div class="get-now pull-right hidden-xs hidden-sm">\n' +
