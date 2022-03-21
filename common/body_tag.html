@@ -197,25 +197,20 @@
       }
     },'.return-btn, .media-insert');
 
-    let $icons = $('.d-header .wrap .contents .panel .icons');
-
-    jQuery(window).scroll(function () {
+    jQuery(window).scroll(function() {
       setTimeout(
           function() {
-            if ($('.extra-info-wrapper').length && !($icons.hasClass('js--scrollEnabled')) && jQuery(this).scrollTop() >= 85) {
+            if ($('.extra-info-wrapper').length
+                && !($('.d-header .wrap .contents .panel .icons').hasClass('js--scrollEnabled'))
+                && jQuery(this).scrollTop() >= 85) {
               jQuery('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
-              $('<li class="button-get-now js--hide">\n' +
-                  '  <div class="get-now pull-right hidden-xs hidden-sm">\n' +
-                  '    <div class="get-it-btn">\n' +
-                  '      <a href="https://dev.derivative.ca/download">\n' +
-                  '        <span>Get it now</span>\n' +
-                  '      </a>\n' +
-                  '    </div>\n' +
-                  '  </div>\n' +
-                  '</li>').appendTo($icons);
-              $icons.addClass('js--scrollEnabled');
+
+              let singleStr = '<li class="button-get-now js--hide"><div class="get-now pull-right hidden-xs hidden-sm"><div class="get-it-btn"><a href="https://dev.derivative.ca/download"><span>Get it now</span></a></div></div></li>';
+
+              singleStr.appendTo($('.d-header .wrap .contents .panel .icons'));
+              $('.d-header .wrap .contents .panel .icons').addClass('js--scrollEnabled');
             }
-          }, 100);
+          }, 500);
     });
 
     // //Sticky nav
