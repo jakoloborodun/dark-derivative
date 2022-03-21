@@ -198,40 +198,40 @@
     },'.return-btn, .media-insert');
 
 
-    //Sticky nav
-    var $nav = $('#superfish-2'),
-        $activeLink = $nav.find('li > a.active'),
-        $subnav = $activeLink.closest('ul'),
-        $header = $('header.d-header'),
-        scroll_direction,
-        scrollTimeInterval,
-        scroll_pos;
-
-    $(window).on('scroll load resize',function() {
-      if (window.innerWidth > 767) {
-        $subnav.addClass('sticky');
-      } else {
-        $subnav.removeClass('sticky');
-      }
-      if (window.innerWidth > 767) {
-        if ($(window).scrollTop() > 90) {
-
-          $subnav.addClass('top-sticky');
-          scroll_direction = (scroll_pos <= $(window).scrollTop()) ? true : false;
-
-          if (scroll_direction) {
-            $header.addClass('hide-header').removeClass('show-header');
-          } else {
-            $header.addClass('show-header').removeClass('hide-header');
-          }
-          window.clearInterval(scrollTimeInterval);
-        } else {
-          $subnav.removeClass('top-sticky');
-          $header.removeClass('show-header hide-header');
-        }
-      }
-      scroll_pos = $(window).scrollTop();
-    })
+    // //Sticky nav
+    // var $nav = $('#superfish-2'),
+    //     $activeLink = $nav.find('li > a.active'),
+    //     $subnav = $activeLink.closest('ul'),
+    //     $header = $('header.d-header'),
+    //     scroll_direction,
+    //     scrollTimeInterval,
+    //     scroll_pos;
+    //
+    // $(window).on('scroll load resize',function() {
+    //   if (window.innerWidth > 767) {
+    //     $subnav.addClass('sticky');
+    //   } else {
+    //     $subnav.removeClass('sticky');
+    //   }
+    //   if (window.innerWidth > 767) {
+    //     if ($(window).scrollTop() > 90) {
+    //
+    //       $subnav.addClass('top-sticky');
+    //       scroll_direction = (scroll_pos <= $(window).scrollTop()) ? true : false;
+    //
+    //       if (scroll_direction) {
+    //         $header.addClass('hide-header').removeClass('show-header');
+    //       } else {
+    //         $header.addClass('show-header').removeClass('hide-header');
+    //       }
+    //       window.clearInterval(scrollTimeInterval);
+    //     } else {
+    //       $subnav.removeClass('top-sticky');
+    //       $header.removeClass('show-header hide-header');
+    //     }
+    //   }
+    //   scroll_pos = $(window).scrollTop();
+    // })
 
   });
 
