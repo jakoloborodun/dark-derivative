@@ -197,6 +197,15 @@
       }
     },'.return-btn, .media-insert');
 
+    jQuery(window).scroll(function () {
+      setTimeout(
+          function() {
+            if ($('.extra-info-wrapper').length && jQuery(this).scrollTop() >= 85) {
+              jQuery('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
+              jQuery('.button-get-now').appendTo($('.d-header .wrap .contents .panel .icons'));
+            }
+          }, 10);
+    });
 
     // //Sticky nav
     // var $nav = $('#superfish-2'),
