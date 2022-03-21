@@ -197,14 +197,25 @@
       }
     },'.return-btn, .media-insert');
 
+    let $icons = $('.d-header .wrap .contents .panel .icons');
+
     jQuery(window).scroll(function () {
       setTimeout(
           function() {
-            if ($('.extra-info-wrapper').length && jQuery(this).scrollTop() >= 85) {
+            if ($('.extra-info-wrapper').length && $icons.hasClass('js--scrollEnabled') && jQuery(this).scrollTop() >= 85) {
               jQuery('.panel .icons #current-user a').not('.badge-notification').append('<div>My Account</div>');
-              jQuery('.button-get-now').appendTo($('.d-header .wrap .contents .panel .icons'));
+              $('<li class="button-get-now js--hide">\n' +
+                  '  <div class="get-now pull-right hidden-xs hidden-sm">\n' +
+                  '    <div class="get-it-btn">\n' +
+                  '      <a href="https://dev.derivative.ca/download">\n' +
+                  '        <span>Get it now</span>\n' +
+                  '      </a>\n' +
+                  '    </div>\n' +
+                  '  </div>\n' +
+                  '</li>').appendTo($icons);
+              $icons.addClass('js--scrollEnabled');
             }
-          }, 10);
+          }, 100);
     });
 
     // //Sticky nav
