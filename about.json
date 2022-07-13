@@ -1,27 +1,25 @@
 {
-  "name": "Derivative Dark",
+  "name": "Derivative New Header",
   "component": false,
   "about_url": "https://github.com/jakoloborodun/dark-derivative",
   "license_url": "https://github.com/jakoloborodun/dark-derivative/blob/master/LICENSE",
   "authors": "Johann Janzen",
-  "theme_version": "1.0.1",
+  "theme_version": "1.0.0",
   "assets": {
-    "derivative-font": "assets/derivative-font.woff",
     "DerivativeIcon": "assets/DerivativeIcon.png",
-    "transparent": "assets/transparent.png",
-    "t-star_probold": "assets/t-star_probold.woff"
+    "transparent": "assets/transparent.png"
   },
   "color_schemes": {
-    "Derivative Dark": {
-      "primary": "dddddd",
-      "secondary": "222222",
-      "tertiary": "0f82af",
-      "quaternary": "c14924",
-      "header_background": "111111",
-      "header_primary": "dddddd",
-      "highlight": "a87137",
+    "Derivative New Header": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "0088cc",
+      "quaternary": "e45735",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "ffff4d",
       "danger": "e45735",
-      "success": "1ca551",
+      "success": "009900",
       "love": "fa6c8d"
     }
   }
