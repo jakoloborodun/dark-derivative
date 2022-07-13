@@ -1,5 +1,5 @@
 {
-  "name": "Derivative New Header",
+  "name": "Derivative New Light",
   "component": false,
   "about_url": "https://github.com/jakoloborodun/dark-derivative",
   "license_url": "https://github.com/jakoloborodun/dark-derivative/blob/master/LICENSE",
@@ -10,7 +10,7 @@
     "transparent": "assets/transparent.png"
   },
   "color_schemes": {
-    "Derivative New Header": {
+    "Derivative New Light": {
       "primary": "222222",
       "secondary": "ffffff",
       "tertiary": "0088cc",
