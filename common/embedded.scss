@@ -8,8 +8,13 @@ html {
   url($t-star_probold) format('woff'); /* Modern Browsers */
 }
 
-.in-reply-to {
+.in-reply-to,
+.post-replies {
   color: var(--primary-medium);
+  &:visited,
+  &:hover {
+    color: var(--primary-high);
+  }
 }
 
 .get-it-btn span {
