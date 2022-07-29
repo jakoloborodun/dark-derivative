@@ -1,0 +1,87 @@
+html {
+  background-color: transparent;
+}
+
+@font-face {
+  font-family: 't-star_probold';
+  src: url($t-star_probold), /* IE9 Compat Modes */
+  url($t-star_probold) format('woff'); /* Modern Browsers */
+}
+
+.in-reply-to,
+.post-replies {
+  color: var(--primary-medium);
+  &:visited,
+  &:hover {
+    color: var(--primary-high);
+  }
+}
+
+.get-it-btn span {
+  text-transform: uppercase;
+}
+
+header.discourse {
+  padding-left: 0;
+}
+
+footer > a {
+  display: none;
+}
+
+footer a.button {
+  vertical-align: middle;
+  overflow: hidden;
+  background-color: transparent;
+  color: #ffffff;
+  min-width: 100px;
+  padding: 0 30px;
+  margin: 30px 0 30px 5px;
+  border: none;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  background-image: -webkit-linear-gradient(315deg, #000 33%, #cdcbcd 33%, #cdcbcd 66%, #000 66%);
+  background-image: -o-linear-gradient(315deg, #000 33%, #cdcbcd 33%, #cdcbcd 66%, #000 66%);
+  background-image: linear-gradient(135deg, #000 33%, #cdcbcd 33%, #cdcbcd 66%, #000 66%);
+  -webkit-background-size: 400% 200%;
+  background-size: 400% 200%;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  font-family: "t-star_probold", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .3s transform ease-out, background-color 0s linear, .3s color ease-out, letter-spacing .3s ease-out, background-position .3s ease-out;
+  -o-transition: .3s transform ease-out, background-color 0s linear, .3s color ease-out, letter-spacing .3s ease-out, background-position .3s ease-out;
+  transition: .3s transform ease-out, background-color 0s linear, .3s color ease-out, letter-spacing .3s ease-out, background-position .3s ease-out;
+  &:hover {
+    background-position: 50% 50%;
+    -webkit-transition: background-color 0s .3s linear, .3s transform ease-out, letter-spacing .3s ease-out, background-position .3s ease-out;
+    -o-transition: background-color 0s .3s linear, .3s transform ease-out, letter-spacing .3s ease-out, background-position .3s ease-out;
+    transition: background-color 0s .3s linear, .3s transform ease-out, letter-spacing .3s ease-out, background-position .3s ease-out;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+    color: #000000;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  footer a.button {
+    min-width: 100px;
+    &:hover {
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+.category-heading {
+  clear: none;
+}

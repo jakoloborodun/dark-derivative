@@ -6,6 +6,7 @@
   "authors": "Johann Janzen",
   "theme_version": "1.0.0",
   "assets": {
+    "t-star_probold": "assets/t-star_probold.woff",
     "DerivativeIcon": "assets/DerivativeIcon.png",
     "transparent": "assets/transparent.png"
   },
