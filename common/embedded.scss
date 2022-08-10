@@ -21,10 +21,6 @@ html {
   text-transform: uppercase;
 }
 
-header.discourse {
-  padding-left: 0;
-}
-
 footer > a {
   display: none;
 }
@@ -71,6 +67,13 @@ footer a.button {
     -webkit-transform: scale(1.05, 1.05);
     transform: scale(1.05, 1.05);
     color: #000000;
+  }
+}
+
+header.discourse {
+  padding-left: 0;
+  a.button {
+    margin: 0;
   }
 }
 
