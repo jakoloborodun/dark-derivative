@@ -23,15 +23,13 @@ html {
 
 header.discourse {
   padding-left: 0;
-  a.button {
-    display: none;
-  }
 }
 
 footer > a {
   display: none;
 }
 
+header.discourse a.button,
 footer a.button {
   vertical-align: middle;
   overflow: hidden;
